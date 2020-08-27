@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set this variable according to the path of package on target
-ROS2_PACKAGE_TARGET_INSTALL_PATH=/opt/ros/foxy
+ROS2_PACKAGE_TARGET_INSTALL_PATH=/opt/ros/rolling
 
 if [ ! -d "${QNX_TARGET}" ]; then
     echo "QNX_TARGET is not set. Exiting..."
@@ -40,7 +40,9 @@ for arch in aarch64; do
             -DCMAKE_VERBOSE_MAKEFILE:BOOL="ON" \
             -DBUILD_TESTING:BOOL="OFF" \
             -DCMAKE_BUILD_TYPE="Release" \
-            -DTARGET_INSTALL_DIR="/opt/ros/foxy"
+            -DTARGET_INSTALL_DIR="/opt/ros/rolling"
+
+done
 
 	# The three variables below are patched according to the installation of ros2 on target and the installation of the current package on target
     # Patching the scripts is done during the build process for convenience but can also be done on target if user chooses to do so
@@ -49,11 +51,10 @@ for arch in aarch64; do
     # _colcon_prefix_sh_COLCON_CURRENT_PREFIX --> package path on target
 
     # setup.sh
-    grep -rl "_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX=" install/${CPUVARDIR}/setup.sh | xargs sed -i "s|_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX=/.*$|_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX=${ROS2_PACKAGE_TARGET_INSTALL_PATH}|g"
-    grep -rl "COLCON_CURRENT_PREFIX=\"/" install/${CPUVARDIR}/setup.sh | xargs sed -i 's|COLCON_CURRENT_PREFIX="/.*$|COLCON_CURRENT_PREFIX="/opt/ros/dashing"|g'
+#    grep -rl --include setup.sh "_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX=" install/ | xargs sed -i "s|_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX=/.*$|_colcon_prefix_chain_sh_COLCON_CURRENT_PREFIX=${ROS2_PACKAGE_TARGET_INSTALL_PATH}|g"
+#    grep -rl --include setup.sh "COLCON_CURRENT_PREFIX=\"/" install/ | xargs sed -i 's|COLCON_CURRENT_PREFIX="/.*$|COLCON_CURRENT_PREFIX=\"${ROS2_PACKAGE_TARGET_INSTALL_PATH}\"|g'
     # local_setup.sh
-    grep -rl "_colcon_prefix_sh_COLCON_CURRENT_PREFIX=\"/" install/${CPUVARDIR}/local_setup.sh | xargs sed -i "s|_colcon_prefix_sh_COLCON_CURRENT_PREFIX=\"/.*\"|_colcon_prefix_sh_COLCON_CURRENT_PREFIX=\"${ROS2_PACKAGE_TARGET_INSTALL_PATH}\"|g"
-
-done
+#    grep -rl --include local_setup.sh "_colcon_prefix_sh_COLCON_CURRENT_PREFIX=\"/" install/ | xargs sed -i "s|_colcon_prefix_sh_COLCON_CURRENT_PREFIX=\"/.*\"|_colcon_prefix_sh_COLCON_CURRENT_PREFIX=\"${ROS2_PACKAGE_TARGET_INSTALL_PATH}\"|g"
+#    grep -rl --include local_setup.sh "AMENT_CURRENT_PREFIX:=\"/" install/ | xargs sed -i "s|AMENT_CURRENT_PREFIX:=\"/.*\"|AMENT_CURRENT_PREFIX:=\"${ROS2_PACKAGE_TARGET_INSTALL_PATH}\"|g"
 
 exit 0
