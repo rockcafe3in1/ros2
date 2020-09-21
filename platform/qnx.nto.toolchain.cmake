@@ -30,6 +30,7 @@ set(CMAKE_C_COMPILER ${QNX_HOST}/usr/bin/qcc)
 set(CMAKE_CXX_COMPILER ${QNX_HOST}/usr/bin/qcc)
 
 set(CMAKE_SYSTEM_PROCESSOR "${CPUVAR}")
+
 set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES ${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES} ${QNX_TARGET}/usr/include)
 
 set(EXTRA_CMAKE_C_FLAGS "-Wl,-rpath-link,${QNX_STAGE}/${CPUVARDIR}/usr/lib:${PWD}/install/${CPUVARDIR}/lib -DTHIRDPARTY=ON -DOPENCV_NOSTL_TRANSITIONAL -D_QNX_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -Wno-deprecated-declarations -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-attributes -I${QNX_STAGE}/usr/include ")
