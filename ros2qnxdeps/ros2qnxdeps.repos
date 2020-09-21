@@ -51,10 +51,6 @@ repositories:
     type: git
     url: git@github.com:asobhy-qnx/opencv.git
     version: master
-  ros2_root:
-    type: git
-    url: git@github.com:asobhy-qnx/ros2.git
-    version: master
   tinyxml2:
     type: git
     url: git@github.com:asobhy-qnx/tinyxml2.git
