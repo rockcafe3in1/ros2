@@ -4,22 +4,51 @@ set e-
 
 echo "Building ROS2 QNX Dependencies..."
 
-./apr/build.sh
-./apr-util/build.sh
-./log4cxx/build.sh
+#find . -maxdepth 2 -mindepth 2 -type f -name build.sh -exec {} ';'
 
-./libxslt/build.sh
-./lxml/build.sh
+cd src
 
-./asio/build.sh
-./memory/build.sh
+cd apr
+./build.sh
 
-./libpng16/build.sh
-./opencv/build.sh
+cd ../apr-util
+./build.sh
 
-./eigen3/build.sh
-./bullet3/build.sh
-./netifaces/build.sh
-./tinyxml2/build.sh
-./numpy/build.sh
-./uncrustify/build.sh
+cd ../log4cxx
+./build.sh
+
+cd ../libxslt
+./build.sh
+
+cd ../lxml
+./build.sh
+
+cd ../asio
+./build.sh
+
+cd ../memory
+./build.sh
+
+cd ../libpng16
+./build.sh
+
+cd ../opencv
+./build.sh
+
+cd ../eigen3
+./build.sh
+
+cd ../bullet3
+./build.sh
+
+cd ../netifaces
+./build.sh
+
+cd ../tinyxml2
+./build.sh
+
+cd ../numpy
+./build.sh
+
+cd ../uncrustify
+./build.sh
