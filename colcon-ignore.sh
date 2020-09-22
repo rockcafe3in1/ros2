@@ -14,3 +14,6 @@ touch src/eclipse-cyclonedds/COLCON_IGNORE
 
 echo 'mimick will be ignored'
 touch src/ros2/mimick_vendor/COLCON_IGNORE
+
+echo 'rttest will be ignored'
+touch src/ros2/realtime_support/rttest/COLCON_IGNORE
