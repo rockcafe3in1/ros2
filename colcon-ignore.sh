@@ -5,6 +5,7 @@ echo 'Adding COLCON_IGNORE to packages that will not be built for QNX'
 echo 'vistalization packages will be ignored'
 touch src/ros-visualization/COLCON_IGNORE
 touch src/ros2/rviz/COLCON_IGNORE
+touch src/ros/ros_tutorials/turtlesim/COLCON_IGNORE
 
 echo 'uncrustify will be ignored'
 touch src/ament/uncrustify_vendor/COLCON_IGNORE
