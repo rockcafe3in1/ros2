@@ -9,17 +9,21 @@ if [ ! -d "${QNX_TARGET}" ]; then
 fi
 
 #for arch in armv7 aarch64 x86_64; do
-for arch in aarch64; do
+for arch in x86_64; do
 
     if [ "${arch}" == "aarch64" ]; then
         CPUVARDIR=aarch64le
         CPUVAR=aarch64le
+		rm src/ros2/pybind11_vendor/COLCON_IGNORE
     elif [ "${arch}" == "armv7" ]; then
         CPUVARDIR=armle-v7
         CPUVAR=armv7le
+		# incompatibility issue between the 32-bit compiler and the package. Needs futher investigation.
+		touch src/ros2/pybind11_vendor/COLCON_IGNORE
     elif [ "${arch}" == "x86_64" ]; then
         CPUVARDIR=x86_64
         CPUVAR=x86_64
+		rm src/ros2/pybind11_vendor/COLCON_IGNORE
     else
         echo "Invalid architecture. Exiting..."
         exit 1
