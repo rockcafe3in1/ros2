@@ -55,7 +55,3 @@ repositories:
     type: git
     url: git@github.com:asobhy-qnx/tinyxml2.git
     version: master
-  uncrustify:
-    type: git
-    url: git@github.com:asobhy-qnx/uncrustify.git
-    version: master

@@ -35,7 +35,7 @@ set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES ${CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTOR
 
 set(EXTRA_CMAKE_C_FLAGS "-Wl,-rpath-link,${QNX_STAGE}/${CPUVARDIR}/usr/lib:${PWD}/install/${CPUVARDIR}/lib -DTHIRDPARTY=ON -DOPENCV_NOSTL_TRANSITIONAL -D_QNX_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -Wno-deprecated-declarations -Wno-unused-parameter -Wno-unused-variable -Wno-ignored-attributes -I${QNX_STAGE}/usr/include ")
 set(EXTRA_CMAKE_CXX_FLAGS "${EXTRA_CMAKE_C_FLAGS} -stdlib=libstdc++ -std=c++14")
-set(EXTRA_CMAKE_LINKER_FLAGS "-Wl,--build-id=md5 -lstdc++")
+set(EXTRA_CMAKE_LINKER_FLAGS "-Wl,--build-id=md5 ")
 
 # needs a cpu + variant
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Vgcc_nto${CMAKE_SYSTEM_PROCESSOR} ${EXTRA_CMAKE_C_FLAGS}" CACHE STRING "c_flags")
@@ -59,7 +59,7 @@ set(THREADS_PTHREAD_ARG "0" CACHE STRING "Result from TRY_RUN" FORCE)
 #set(PYTHON_SOABI cpython-38-${CPUVARDIR}-qnx-nto)
 set(PYTHON_SOABI cpython-38)
 find_package(PythonInterp 3.8 REQUIRED)
-set(PYTHON_INCLUDE_DIR ${QNX_TARGET}/${CPUVARDIR}/usr/include/python3.8;${QNX_TARGET}/usr/include/python3.8)
+set(PYTHON_INCLUDE_DIR ${QNX_TARGET}/${CPUVARDIR}/usr/include/python3.8;${QNX_TARGET}/usr/include/python3.8;${QNX_STAGE}/${CPUVARDIR}/usr/lib/python3.8/site-packages/numpy/core/include)
 set(PYTHON_LIBRARY ${QNX_TARGET}/${CPUVARDIR}/usr/lib/libpython3.8.so)
 
 #######################################################################

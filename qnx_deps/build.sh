@@ -52,9 +52,6 @@ cd ../tinyxml2
 cd ../numpy
 ./build.sh
 
-cd ../uncrustify
-./build.sh
-
 duration=$(echo "$(date +%s.%N) - $start" | bc)
 execution_time=`printf "%.2f seconds" $duration`
 echo "Build time: $execution_time"

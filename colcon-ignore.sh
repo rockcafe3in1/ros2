@@ -18,3 +18,7 @@ touch src/ros2/mimick_vendor/COLCON_IGNORE
 
 echo 'rttest will be ignored'
 touch src/ros2/realtime_support/rttest/COLCON_IGNORE
+
+echo 'pendulum control demo will be ignored since it depends on rttest'
+touch src/ros2/demos/pendulum_control/COLCON_IGNORE
+
