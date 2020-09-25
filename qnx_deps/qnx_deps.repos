@@ -1,57 +1,57 @@
 repositories:
   apr:
     type: git
-    url: git@github.com:asobhy-qnx/apr.git
+    url: https://github.com/asobhy-qnx/apr.git
     version: master
   apr-util:
     type: git
-    url: git@github.com:asobhy-qnx/apr-util.git
+    url: https://github.com/asobhy-qnx/apr-util.git
     version: master
   asio:
     type: git
-    url: git@github.com:asobhy-qnx/asio.git
+    url: https://github.com/asobhy-qnx/asio.git
     version: master
   bullet3:
     type: git
-    url: git@github.com:asobhy-qnx/bullet3.git
+    url: https://github.com/asobhy-qnx/bullet3.git
     version: master
   eigen3:
     type: git
-    url: git@github.com:asobhy-qnx/eigen3.git
+    url: https://github.com/asobhy-qnx/eigen3.git
     version: master
   libpng16:
     type: git
-    url: git@github.com:asobhy-qnx/libpng16.git
+    url: https://github.com/asobhy-qnx/libpng16.git
     version: master
   libxslt:
     type: git
-    url: git@github.com:asobhy-qnx/libxslt.git
+    url: https://github.com/asobhy-qnx/libxslt.git
     version: master
   log4cxx:
     type: git
-    url: git@github.com:asobhy-qnx/log4cxx.git
+    url: https://github.com/asobhy-qnx/log4cxx.git
     version: master
   lxml:
     type: git
-    url: git@github.com:asobhy-qnx/lxml.git
+    url: https://github.com/asobhy-qnx/lxml.git
     version: master
   memory:
     type: git
-    url: git@github.com:asobhy-qnx/memory.git
+    url: https://github.com/asobhy-qnx/memory.git
     version: master
   netifaces:
     type: git
-    url: git@github.com:asobhy-qnx/netifaces.git
+    url: https://github.com/asobhy-qnx/netifaces.git
     version: master
   numpy:
     type: git
-    url: git@github.com:asobhy-qnx/numpy.git
+    url: https://github.com/asobhy-qnx/numpy.git
     version: master
   opencv:
     type: git
-    url: git@github.com:asobhy-qnx/opencv.git
+    url: https://github.com/asobhy-qnx/opencv.git
     version: master
   tinyxml2:
     type: git
-    url: git@github.com:asobhy-qnx/tinyxml2.git
+    url: https://github.com/asobhy-qnx/tinyxml2.git
     version: master
