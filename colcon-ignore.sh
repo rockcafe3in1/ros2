@@ -2,23 +2,23 @@
 
 echo 'Adding COLCON_IGNORE to packages that will not be built for QNX'
 
-echo 'vistalization packages will be ignored'
+echo 'Ignoring vistalization packages'
 touch src/ros-visualization/COLCON_IGNORE
 touch src/ros2/rviz/COLCON_IGNORE
 touch src/ros/ros_tutorials/turtlesim/COLCON_IGNORE
 
-echo 'uncrustify will be ignored'
+echo 'Ignoring uncrustify'
 touch src/ament/uncrustify_vendor/COLCON_IGNORE
 
-echo 'CycloneDDS will be ignored'
+echo 'Ignoring CycloneDDS'
 touch src/eclipse-cyclonedds/COLCON_IGNORE
 
-echo 'mimick will be ignored'
+echo 'Ignoring mimick'
 touch src/ros2/mimick_vendor/COLCON_IGNORE
 
-echo 'rttest will be ignored'
+echo 'Ignoring rttest'
 touch src/ros2/realtime_support/rttest/COLCON_IGNORE
 
-echo 'pendulum control demo will be ignored since it depends on rttest'
+echo 'Ignoring pendulum control'
 touch src/ros2/demos/pendulum_control/COLCON_IGNORE
 
