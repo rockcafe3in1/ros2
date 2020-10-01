@@ -3,7 +3,7 @@
 set -e
 
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
-trap 'echo "Build Successful"' EXIT
+trap 'echo "Build failed"' EXIT
 
 echo "Building ROS2 QNX Dependencies..."
 
@@ -57,4 +57,4 @@ cd ../numpy
 
 duration=$(echo "$(date +%s.%N) - $start" | bc)
 execution_time=`printf "%.2f seconds" $duration`
-echo "Build time: $execution_time"
+echo "Build Successful. Build time: $execution_time"
