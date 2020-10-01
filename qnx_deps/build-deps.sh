@@ -1,9 +1,7 @@
 #!/bin/bash
 
 set -e
-
 trap 'last_command=$current_command; current_command=$BASH_COMMAND' DEBUG
-trap 'echo "Build failed"' EXIT
 
 echo "Building ROS2 QNX Dependencies..."
 
