@@ -53,6 +53,9 @@ cd ../tinyxml2
 cd ../numpy
 ./build.sh
 
+cd ../yaml-cpp
+./build.sh
+
 duration=$(echo "$(date +%s.%N) - $start" | bc)
 execution_time=`printf "%.2f seconds" $duration`
 echo "Build Successful. Build time: $execution_time"
