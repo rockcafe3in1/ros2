@@ -56,6 +56,9 @@ cd ../numpy
 cd ../yaml-cpp
 ./build.sh
 
+cd ../pybind11
+./build.sh
+
 duration=$(echo "$(date +%s.%N) - $start" | bc)
 execution_time=`printf "%.2f seconds" $duration`
 echo "Build Successful. Build time: $execution_time"
