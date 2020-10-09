@@ -22,3 +22,5 @@ touch src/ros2/realtime_support/rttest/COLCON_IGNORE
 echo 'Ignoring pendulum control'
 touch src/ros2/demos/pendulum_control/COLCON_IGNORE
 
+echo 'Ignoring pybind11_vendor'
+touch src/ros2/pybind11_vendor/COLCON_IGNORE

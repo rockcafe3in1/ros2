@@ -61,7 +61,10 @@ set(PYTHON_SOABI cpython-38)
 find_package(PythonInterp 3.8 REQUIRED)
 set(PYTHON_INCLUDE_DIR ${QNX_TARGET}/${CPUVARDIR}/usr/include/python3.8;${QNX_TARGET}/usr/include/python3.8;${QNX_STAGE}/${CPUVARDIR}/usr/lib/python3.8/site-packages/numpy/core/include)
 set(PYTHON_LIBRARY ${QNX_TARGET}/${CPUVARDIR}/usr/lib/libpython3.8.so)
-
+set(PYTHON_LIBRARIES ${QNX_TARGET}/${CPUVARDIR}/usr/lib)
+set(PYTHONLIBS_FOUND)
+set(PYTHON_MODULE_EXTENSION .cpython-38.so)
+set(PYTHON_IS_DEBUG FALSE)
 #######################################################################
 # Workaround to fix Eigen3Config.cmake setting eigen3 include dirs to
 # ${QNX_STAGE}/${CPUVARDIR}/usr/include/ instead of ${QNX_STAGE}/usr/include/
