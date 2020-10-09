@@ -14,7 +14,6 @@ for arch in aarch64 x86_64; do
     if [ "${arch}" == "aarch64" ]; then
         CPUVARDIR=aarch64le
         CPUVAR=aarch64le
-		rm src/ros2/pybind11_vendor/COLCON_IGNORE
     elif [ "${arch}" == "armv7" ]; then
         CPUVARDIR=armle-v7
         CPUVAR=armv7le
@@ -23,7 +22,6 @@ for arch in aarch64 x86_64; do
     elif [ "${arch}" == "x86_64" ]; then
         CPUVARDIR=x86_64
         CPUVAR=x86_64
-		rm src/ros2/pybind11_vendor/COLCON_IGNORE
     else
         echo "Invalid architecture. Exiting..."
         exit 1
