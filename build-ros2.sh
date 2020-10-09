@@ -8,7 +8,7 @@ if [ ! -d "${QNX_TARGET}" ]; then
     exit 1
 fi
 
-for arch in armv7 aarch64 x86_64; do
+for arch in aarch64 x86_64; do
 #for arch in x86_64; do
 
     if [ "${arch}" == "aarch64" ]; then
